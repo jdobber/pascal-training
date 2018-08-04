@@ -25,6 +25,15 @@ end.
 
 # Schleifen
 
+## while
+
+```pascal
+while (expr) do
+begin 
+ (* statements *)
+end
+```
+
 # Bedingungen
 
 # Weitere Themen
