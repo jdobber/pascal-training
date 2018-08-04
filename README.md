@@ -1,6 +1,8 @@
 # Cheatsheet Pascal
 
-# Grundlegender Programmaufbau
+## Syntax
+
+### Grundlegender Programmaufbau
 
 ```pascal
 program name(input, ouput)
@@ -19,13 +21,13 @@ begin
  
 end.
 ```
-# Typen
+### Typen
 
-# Prozeduren / Funktionen
+### Prozeduren / Funktionen
 
-# Schleifen
+### Schleifen
 
-## while
+#### while
 
 ```pascal
 while (expr) do
@@ -34,9 +36,17 @@ begin
 end;
 ```
 
-# Bedingungen
+### Bedingungen
 
-# Weitere Themen
-## Rekursion
-## Zeiger
-## ...
+# Muster
+
+## Durch eine Liste iterieren (laufen)
+
+```pascal
+while (expr) do
+begin 
+ (* statements *)
+end;
+```
+
+
