@@ -31,7 +31,7 @@ end.
 while (expr) do
 begin 
  (* statements *)
-end
+end;
 ```
 
 # Bedingungen
