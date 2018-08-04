@@ -43,9 +43,17 @@ end;
 ## Durch eine Liste iterieren (laufen)
 
 ```pascal
-while (expr) do
+procedure DurchlaufeListe( inListe: tRefListenElement )
+var
+     z : tRefListenElement
 begin 
- (* statements *)
+     z := inListe;
+     while (z <> nil) do
+     begin
+          (* statements *)
+          
+          z := z.^next;
+     end;
 end;
 ```
 
