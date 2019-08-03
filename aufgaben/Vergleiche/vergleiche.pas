@@ -22,10 +22,7 @@ var
   (* in FreePascal können Felder im Gegensatz zu Standard-Pascal
   * initialisert werden 
   * *)
-  FeldA: tFeld = (1,2,3,4,5);
-  FeldB: tFeld = (1,2,3,4,5);
-  FeldC: tFeld = (7,2,3,4,5);
-  FeldD: tFeld = (1,2,3,4,8);
+  
   
   FeldE: tFeld = (3,4,5,5,5); (* Feld aus der Aufgabenstellung *)
   FeldF: tFeld = (5,2,3,4,1); (* Feld aus der Aufgabenstellung *)
@@ -33,8 +30,7 @@ var
   FeldG: tFeld = (1,2,3,3,1); (* Feld aus der Aufgabenstellung *)
   FeldH: tFeld = (1,2,4,4,5); (* Feld aus der Aufgabenstellung *)
 
-  FeldI: tFeld = (1,2,3,4,4);
-  FeldJ: tFeld = (1,2,3,3,4);
+
 
 function vgl(inFeldA:tFeld;inFeldB:tFeld):boolean; 
 {Die Funktion überprüft ob alle Werte des Feldes inFeldA auch im 
@@ -94,13 +90,35 @@ begin
 	vgl3 := gefunden;
 end;
 
+function vgl4(inFeldA: tFeld; inFeldB: tFeld): boolean;
+{ Variante 4 mit while Konstruktion und vorzeitigem Abbruch}
+var i, j: tIndexMax;
+    alleGefunden, gefunden: boolean;
+    
+begin
+	alleGefunden := true;
+	i := 1;
+	
+	while (i <= MAX) and alleGefunden do
+	begin
+		gefunden := false;
+		j := 1;
+		while (j <= MAX) and (gefunden = false) do
+		begin
+			if inFeldA[i] = inFeldB[j] then gefunden := true
+			else j := j + 1
+		end;
+		alleGefunden := gefunden;
+		i := i + 1;
+	end;
+		
+	vgl4 := alleGefunden;
+end;
+
+
 Begin 
-   (* alle 3 Lösungen müssen die gleiche Lösung liefern *)
-	writeln( vgl(FeldA, FeldB), ' ', vgl2(FeldA, FeldB), ' ', vgl3(FeldA, FeldB) );
-	writeln( vgl(FeldA, FeldC), ' ', vgl2(FeldA, FeldC), ' ', vgl3(FeldA, FeldC) );
-	writeln( vgl(FeldA, FeldD), ' ', vgl2(FeldA, FeldD), ' ', vgl3(FeldA, FeldD) );
-	writeln( vgl(FeldE, FeldF), ' ', vgl2(FeldE, FeldF), ' ', vgl3(FeldE, FeldF) );
-	writeln( vgl(FeldG, FeldH), ' ', vgl2(FeldG, FeldH), ' ', vgl3(FeldG, FeldH) );
-	writeln( vgl(FeldI, FeldJ), ' ', vgl2(FeldI, FeldJ), ' ', vgl3(FeldI, FeldJ) );		
+   (* alle Lösungen müssen die gleiche Lösung liefern *)
+	writeln( vgl(FeldE, FeldF), ' ', vgl2(FeldE, FeldF), ' ', vgl3(FeldE, FeldF), ' ', vgl4(FeldE, FeldF) );
+	writeln( vgl(FeldG, FeldH), ' ', vgl2(FeldG, FeldH), ' ', vgl3(FeldG, FeldH), ' ', vgl4(FeldG, FeldH) );
 End.
 
