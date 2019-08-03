@@ -8,7 +8,7 @@ type
 			end; 
 
 var 
-  refListeA, refListeB: tRefListe; (* unsere Zeiger fuer unsere listen *)
+  refListeA, refListeB, refListeC: tRefListe; (* unsere Zeiger fuer unsere listen *)
     
 (*
 * fuegt an das Ende einer Liste ein neues Element ein und
@@ -87,9 +87,14 @@ begin
 	
 	(* Ergebnisliste erzeugen *)
 	refListeB := ListeAufbauen(refListeA);
-
+	
 	(* Ergebnisliste ausgeben *)
 	druckeListe(refListeB);
 	
-
+	(* Ergebnisliste erzeugen *)
+	refListeC := ListeAufbauen(refListeB);
+	
+	(* Ergebnisliste ausgeben *)
+	druckeListe(refListeC);
+	
 end.
